@@ -1,7 +1,7 @@
 ---
 slug: harm-reduction-or-abstinence
 title: Harm Reduction or Abstinence? You Can Decide Later
-published: false
+published: true
 date: 2026-08-20T00:00:00.000Z
 description: 'You don''t need to have settled the abstinence question to start counseling. How harm reduction and abstinence-based approaches differ, and why it isn''t a gate.'
 hero: aspen
