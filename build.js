@@ -451,13 +451,45 @@ pages.push({
         <li>MA, Clinical Mental Health Counseling</li>
         <li>Licensed Professional Counselor (LPC), Colorado</li>
         <li>Licensed Addiction Counselor (LAC), Colorado</li>
-        <li>Gottman Method training, Levels 1 &amp; 2</li>
+        <li>Gottman Method training</li>
+        <li>Financial Therapy training</li>
+        <li>Crisis Intervention training</li>
       </ul>
       <p class="callout" style="margin-top:2rem">
         <strong>Verify a license.</strong> Colorado license numbers can be looked up through the
         Department of Regulatory Agencies at
         <a href="https://apps.colorado.gov/dora/licensing/Lookup/LicenseLookup.aspx">DORA License Lookup</a>.
       </p>
+    </div>
+  </section>
+
+
+  <section class="section" id="contact-form">
+    <div class="wrap center">
+      <h2>Ready when you are</h2>
+      <p class="narrow">Reach out for a confidential consultation &mdash; no cost, no pressure, no obligation to book.</p>
+      <form class="form" id="contactForm" style="margin-top:2.5rem" method="post" action="/api/contact" novalidate>
+        <div class="form__row">
+          <label class="sr-only" for="cf-name">Name</label>
+          <input id="cf-name" type="text" name="name" placeholder="Name" autocomplete="name" required>
+          <label class="sr-only" for="cf-email">Email address</label>
+          <input id="cf-email" type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+        </div>
+        <label class="sr-only" for="cf-phone">Phone number (optional)</label>
+        <input id="cf-phone" type="tel" name="phone" placeholder="Phone (optional)" autocomplete="tel">
+        <label class="sr-only" for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" placeholder="What brings you here? A sentence or two is plenty." required></textarea>
+        <div class="hp" aria-hidden="true">
+          <label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <button class="btn btn--terracotta" type="submit" data-label="Send">Send</button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+        <p class="form__note">
+          Your privacy and safety are my top concerns. Your information will never be shared or sold.
+          Please don't include sensitive clinical details in this form &mdash; we'll cover those securely
+          once we connect.
+        </p>
+      </form>
     </div>
   </section>
 
