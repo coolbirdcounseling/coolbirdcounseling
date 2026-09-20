@@ -339,7 +339,7 @@ pages.push({
         </article>
         <article class="framed service">
           <h3>On-demand Therapy</h3>
-          <div class="price" style="font-size:clamp(1.5rem,2.6vw,1.875rem)">$500/month</div>
+          <div class="price" style="font-size:clamp(1.5rem,2.6vw,1.875rem)">Coming Soon!</div>
           <p class="meta">Flexible same-day support</p>
           <p class="desc">Therapy when you need it, not just when you have an appointment. Get flexible same-day access by phone, with up to four hours of clinical support each month.</p>
           <a class="btn btn--outline" href="/service-on-demand-therapy">Learn more</a>
@@ -547,7 +547,7 @@ pages.push({
         </article>
         <article class="framed service">
           <h3>On-demand Therapy</h3>
-          <div class="price" style="font-size:clamp(1.5rem,2.6vw,1.875rem)">$500/month</div>
+          <div class="price" style="font-size:clamp(1.5rem,2.6vw,1.875rem)">Coming Soon!</div>
           <p class="meta">Flexible same-day support</p>
           <p class="desc">Therapy when you need it, not just when you have an appointment. Get flexible same-day access by phone, with up to four hours of clinical support each month.</p>
           <a class="btn btn--outline" href="/service-on-demand-therapy">Learn more</a>
