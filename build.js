@@ -1056,7 +1056,7 @@ pages.push({
     provider: { '@id': SITE + '/#practice' },
     areaServed: { '@type': 'State', name: 'Colorado' },
     serviceType: 'Individual Psychotherapy',
-    url: SITE + '/service-individual-psychotherapy.html'
+    url: SITE + '/service-individual-psychotherapy'
   }],
   body: `
   <section class="page-head wrap">
@@ -1114,7 +1114,7 @@ pages.push({
     provider: { '@id': SITE + '/#practice' },
     areaServed: { '@type': 'State', name: 'Colorado' },
     serviceType: 'Substance Use and Mental Health Assessment',
-    url: SITE + '/service-assessment.html'
+    url: SITE + '/service-assessment'
   }],
   body: `
   <section class="page-head wrap">
@@ -1171,7 +1171,7 @@ pages.push({
     provider: { '@id': SITE + '/#practice' },
     areaServed: { '@type': 'State', name: 'Colorado' },
     serviceType: 'Clinical Supervision',
-    url: SITE + '/service-clinical-supervision.html'
+    url: SITE + '/service-clinical-supervision'
   }],
   body: `
   <section class="page-head wrap">
@@ -1434,7 +1434,7 @@ pages.push({
   file: 'blog.html',
   title: 'Blog | Cool Bird Counseling, Colorado',
   description: 'Plain-language writing on addiction, recovery, grief, and mental health from Kelly Faus, MA, LPC, LAC, a counselor serving clients throughout Colorado.',
-  schema: [{ '@type': 'Blog', name: 'Cool Bird Counseling Blog', url: SITE + '/blog.html',
+  schema: [{ '@type': 'Blog', name: 'Cool Bird Counseling Blog', url: SITE + '/blog',
              author: { '@id': SITE + '/#kelly' } }],
   body: `
   <section class="page-head wrap">
@@ -1683,9 +1683,9 @@ Colorado. Gottman Method training, Levels 1 & 2. Also serves as Clinical Directo
 Recovery Solutions and as a supervisor with Lost and Found Behavioral Wellness.
 
 ## Services and rates
-- Individual Psychotherapy — $100, 45–60 minutes: ${SITE}/service-individual-psychotherapy.html
-- Substance Use & Mental Health Assessment — $150, 60–90 minutes: ${SITE}/service-assessment.html
-- Clinical Supervision (CAC Core Curriculum credit available), rate on request: ${SITE}/service-clinical-supervision.html
+- Individual Psychotherapy — $100, 45–60 minutes: ${SITE}/service-individual-psychotherapy
+- Substance Use & Mental Health Assessment — $150, 60–90 minutes: ${SITE}/service-assessment
+- Clinical Supervision (CAC Core Curriculum credit available), rate on request: ${SITE}/service-clinical-supervision
 
 ## Key facts
 - All sessions are virtual, via Zoom for Healthcare, anywhere in Colorado
