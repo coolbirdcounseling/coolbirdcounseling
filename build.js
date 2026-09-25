@@ -1402,7 +1402,10 @@ POSTS.forEach(post => {
       datePublished: post.date,
       author: { '@id': SITE + '/#kelly' },
       publisher: { '@id': SITE + '/#practice' },
-      mainEntityOfPage: SITE + '/' + post.file,
+      // Google needs an image for article rich results; use the post's banner photo.
+      image: SITE + '/assets/' + (post.hero && fs.existsSync(path.join(__dirname, 'assets', 'co-' + post.hero + '.webp'))
+        ? 'co-' + post.hero + '.webp' : 'og-card.jpg'),
+      mainEntityOfPage: SITE + '/' + post.file.replace(/\.html$/, ''),
       keywords: [].concat(post.tags || []).join(', '),
     }],
     body: `
