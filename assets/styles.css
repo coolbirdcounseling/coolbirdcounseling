@@ -223,9 +223,20 @@ article .wrap.narrow hr {
   padding-block: clamp(3rem, 6vw, 5rem) 27vw;
   min-height: 46vw;
 }
-.hero__inner { max-width: 40rem; margin-inline: auto; position: relative; z-index: 1; }
+.hero__inner {
+  max-width: 55rem;
+  margin-inline: auto;
+  position: relative;
+  z-index: 1;
+}
 .hero h1 { margin-bottom: 0.5em; }
-.hero p { color: var(--body); font-size: clamp(1.0625rem, 1.7vw, 1.1875rem); }
+.hero p {
+  color: var(--body);
+  font-size: clamp(1.0625rem, 1.7vw, 1.1875rem);
+  max-width: 55rem;
+  margin-inline: auto;
+  text-wrap: pretty;
+}
 .hero .btn { margin-top: 1.75rem; }
 
 .page-head { padding-block: clamp(3rem, 7vw, 5rem) clamp(2rem, 4vw, 3rem); text-align: center; }
