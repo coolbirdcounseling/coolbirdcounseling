@@ -418,7 +418,7 @@ pages.push({
         anxiety, trauma, anger, and codependency.
       </p>
       <p>
-        People usually find me at a hard moment &mdash; a relapse, a loss, a relationship coming apart,
+        People usually find me at a hard moment like a relapse, a loss, a relationship coming apart,
         or the slow realization that the way they&rsquo;ve been coping has stopped working. My job
         isn&rsquo;t to hand you a verdict on that. It&rsquo;s to help you look at it clearly, with
         someone in the room who isn&rsquo;t going to flinch.
