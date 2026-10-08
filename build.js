@@ -273,8 +273,8 @@ pages.push({
       <h1>Let&rsquo;s talk about it.</h1>
       <p>
         Cool Bird Counseling is a quiet retreat to help you overcome adversity and find meaning.
-        I offer counseling and assessment for addiction and mental health across Colorado &mdash;
-        all by secure video, wherever you are. The first step is the hardest; luckily, help is
+        I offer counseling and assessment for addiction and mental health across Colorado
+        by secure video wherever you are. The first step is the hardest; luckily, help is
         always just a click away whenever you&rsquo;re ready.
       </p>
       <a class="btn btn--solid" href="contact.html">Get Started</a>
