@@ -115,7 +115,7 @@ const footer = `<div class="photostrip photostrip--valley" role="img" aria-label
         ${FOOTER_EXTRA.map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('\n        ')}
       </ul>
     </nav>
-    <p class="site-footer__meta">&copy; ${new Date().getFullYear()} Cool Bird Counseling LLC &middot; Telehealth throughout Colorado</p>
+    <p class="site-footer__meta">&copy; ${new Date().getFullYear()} Cool Bird Counseling LLC &middot; Telehealth throughout Colorado &middot; Website by <a href="https://therapistweb.design/" rel="noopener">Therapist Web Design</a></p>
     <p class="site-footer__crisis">
       In crisis? Call or text <a href="tel:988">988</a> &mdash; the Suicide &amp; Crisis Lifeline, answered
       24/7 in Colorado. If you are in immediate danger, call <a href="tel:911">911</a>.
