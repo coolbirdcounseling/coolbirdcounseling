@@ -356,6 +356,8 @@ article .wrap.narrow hr {
 .site-footer nav a { color: #fff; text-decoration: none; font-size: 0.9375rem; }
 .site-footer nav a:hover { color: var(--mint); }
 .site-footer__meta { font-style: italic; font-size: 0.9375rem; }
+.site-footer__meta a { color: #fff; text-decoration-color: rgba(255,255,255,.5); text-underline-offset: 3px; }
+.site-footer__meta a:hover { color: var(--mint); }
 .site-footer__crisis {
   font-family: var(--sans); font-size: 0.8125rem; letter-spacing: .04em;
   border-top: 1px solid rgba(255,255,255,.16); margin-top: 2.25rem; padding-top: 1.75rem;
