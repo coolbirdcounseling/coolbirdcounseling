@@ -306,9 +306,7 @@ pages.push({
           that&rsquo;s how life tends to arrive.
         </p>
         <p>
-          I trained at Adams State University and the University of Northern Colorado. Alongside this
-          practice I serve as Clinical Director at Denver Recovery Solutions and as a supervisor with
-          Lost and Found Behavioral Wellness.
+          I trained at Adams State University and the University of Northern Colorado.
         </p>
         <p style="margin-top:1.5rem"><a href="about.html">More about my background and approach &rarr;</a></p>
       </div>
@@ -425,9 +423,7 @@ pages.push({
       </p>
       <p>
         I hold a master&rsquo;s degree in Clinical Mental Health Counseling and studied at Adams State
-        University and the University of Northern Colorado. Alongside Cool Bird Counseling, I serve as
-        Clinical Director at Denver Recovery Solutions and as a supervisor with Lost and Found
-        Behavioral Wellness.
+        University and the University of Northern Colorado.
       </p>
 
       <h3 style="margin-top:2.5rem">How I work</h3>
