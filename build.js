@@ -51,6 +51,7 @@ const FOOTER_EXTRA = [
 ];
 
 /* ---- JSON-LD ---------------------------------------------------------- */
+
 const ORG = {
   '@type': 'MedicalBusiness',
   '@id': SITE + '/#practice',
@@ -59,7 +60,18 @@ const ORG = {
   email: 'kelly@coolbirdcounseling.com',
   telephone: '+1-303-351-1068',
   priceRange: '$100-$150',
-  areaServed: { '@type': 'State', name: 'Colorado' },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '815 S 25th St, Suite E',
+    addressLocality: 'Colorado Springs',
+    addressRegion: 'CO',
+    postalCode: '80904',
+    addressCountry: 'US'
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Colorado Springs' },
+    { '@type': 'State', name: 'Colorado' }
+  ],
   availableService: ['Addiction counseling', 'Mental health therapy', 'Grief counseling',
                      'Substance use assessment', 'Clinical supervision'],
   founder: { '@id': SITE + '/#kelly' },
@@ -115,7 +127,7 @@ const footer = `<div class="photostrip photostrip--valley" role="img" aria-label
         ${FOOTER_EXTRA.map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('\n        ')}
       </ul>
     </nav>
-    <p class="site-footer__meta">&copy; ${new Date().getFullYear()} Cool Bird Counseling LLC &middot; Telehealth throughout Colorado &middot; Website by <a href="https://therapistweb.design/" rel="noopener">Therapist Web Design</a></p>
+    <p class="site-footer__meta">&copy; ${new Date().getFullYear()} Cool Bird Counseling LLC &middot; In-person counseling in Colorado Springs or telehealth throughout Colorado &middot; Website by <a href="https://therapistweb.design/" rel="noopener">Therapist Web Design</a></p>
     <p class="site-footer__crisis">
       In crisis? Call or text <a href="tel:988">988</a>, the Suicide &amp; Crisis Lifeline, answered
       24/7 in Colorado. If you are in immediate danger, call <a href="tel:911">911</a>.
@@ -145,15 +157,15 @@ const page = ({ file, title, description, body, schema, banner, bannerAlt }) => 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:alt" content="Cool Bird Counseling — addiction and mental health counseling, telehealth throughout Colorado">
+<meta property="og:image:alt" content="Cool Bird Counseling — addiction and mental health counseling in Colorado Springs, telehealth throughout Colorado">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">
 <meta name="twitter:image" content="${SITE}/assets/og-card.jpg">
-<meta name="twitter:image:alt" content="Cool Bird Counseling — telehealth counseling throughout Colorado">
+<meta name="twitter:image:alt" content="Cool Bird Counseling — in-person counseling in Colorado Springs, telehealth counseling throughout Colorado">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="geo.region" content="US-CO">
-<meta name="geo.placename" content="Colorado">
+<meta name="geo.placename" content="Colorado Springs, Colorado">
 <meta name="author" content="Kelly R. Faus, MA, LPC, LAC">
 <meta name="theme-color" content="#2f4038">
 <meta name="google-site-verification" content="e0PbEK3eZvhM5MflUVbOVHoLOXsXFi4VtLkGXnzVK2E">
@@ -266,14 +278,14 @@ const pages = [];
 pages.push({
   file: 'index.html',
   title: 'Addiction & Mental Health Counseling in Colorado | Cool Bird',
-  description: 'Confidential addiction counseling, grief support, and mental health therapy for adults and teens across Colorado. Telehealth with Kelly Faus, MA, LPC, LAC.',
+  description: 'Confidential addiction counseling, grief support, and mental health therapy for adults and teens in Colorado Springs or telehealth across Colorado with Kelly Faus, MA, LPC, LAC.',
   body: `
   <section class="hero">
     <div class="wrap hero__inner">
       <h1>Let&rsquo;s talk about it.</h1>
       <p>
         Cool Bird Counseling is a quiet retreat to help you overcome adversity and find meaning.
-        I offer counseling and assessment for addiction and mental health across Colorado
+        I offer counseling and assessment for addiction and mental health in person in Colorado Springs or across Colorado
         by secure video wherever you are. The first step is the hardest; luckily, help is
         always just a click away whenever you&rsquo;re ready.
       </p>
@@ -286,8 +298,8 @@ pages.push({
     <div class="wrap center">
       <p class="eyebrow">Same-week openings available</p>
       <div class="grid grid--3" style="margin-top:1.5rem">
-        <div><h3>Licensed statewide</h3><p>LPC and LAC in Colorado, seeing clients from Denver to the Western Slope.</p></div>
-        <div><h3>Private and secure</h3><p>Sessions run on Zoom for Healthcare. No commute, no waiting room.</p></div>
+        <div><h3>Licensed statewide</h3><p>LPC and LAC in Colorado, seeing clients from Denver to the Western Slope, or in-person in Colorado Springs.</p></div>
+        <div><h3>Private and secure</h3><p>Virtual sessions run on Zoom for Healthcare. No commute, no waiting room.</p></div>
         <div><h3>Insurance or private pay</h3><p>Straightforward private pay, or reach out and I&rsquo;ll tell you where network participation stands.</p></div>
       </div>
     </div>
@@ -319,7 +331,7 @@ pages.push({
   <section class="section section--topo">
     <div class="wrap center">
       <h2>Services</h2>
-      <p class="narrow">Currently, all sessions are conducted virtually via Zoom for Healthcare.</p>
+      <p class="narrow">Sessions are conducted in-person in Colorado Springs or virtually via Zoom for Healthcare.</p>
       <div class="grid grid--3" style="margin-top:3rem;text-align:left">
         <article class="framed service">
           <h3>Individual Psychotherapy</h3>
@@ -355,7 +367,7 @@ pages.push({
         &ldquo;Our emotional states are temporary, and they will pass.&rdquo;
       </p>
       <p style="margin-top:1.75rem;font-family:var(--sans);font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7">
-        Serving all of Colorado by telehealth
+        Serving Colorado Springs, and all of Colorado by telehealth
       </p>
     </div>
   </section>
@@ -373,7 +385,7 @@ pages.push({
         <details class="qa"><summary>Do I have to want to quit to work with you?</summary>
           <p>No. Abstinence is one good goal among several. If harm reduction is where you are, that is where we start. I am not going to hand you a verdict on your use before we have even talked about it.</p></details>
         <details class="qa"><summary>Are sessions in person or online?</summary>
-          <p>All sessions are conducted virtually via Zoom for Healthcare &mdash; no commute and no waiting room, anywhere in Colorado from Denver to the Western Slope.</p></details>
+          <p>Sessions are conducted in-person in Colorado Springs or virtually via Zoom for Healthcare &mdash; virtual sessions have no commute and no waiting room, anywhere in Colorado from Denver to the Western Slope.</p></details>
         <details class="qa"><summary>What happens in a first session?</summary>
           <p>Mostly history and orientation &mdash; what brought you here, what you have already tried, what you want to be different, and how we will know it is working. You do not need to prepare anything.</p></details>
         <details class="qa"><summary>How much does it cost?</summary>
@@ -498,12 +510,12 @@ pages.push({
 pages.push({
   file: 'services.html',
   title: 'Services & Rates | Cool Bird Counseling, Colorado',
-  description: 'Individual psychotherapy, substance use and mental health assessment, and clinical supervision. Telehealth across Colorado. Insurance and private pay options.',
+  description: 'Individual psychotherapy, substance use and mental health assessment, and clinical supervision. In-person in Colorado Springs or telehealth across Colorado. Insurance and private pay options.',
   body: `
   <section class="page-head wrap">
     <p class="eyebrow">Services</p>
     <h1>Care that fits the shape of your week.</h1>
-    <p class="lede">All sessions are conducted virtually via Zoom for Healthcare, so you can meet from home, from the office, or from a parked car between obligations.</p>
+    <p class="lede">Sessions are conducted in-person in Colorado Springs or virtually via Zoom for Healthcare, so you can meet from home, from the office, or from a parked car between obligations.</p>
   </section>
 
   <section class="section" style="padding-top:0">
@@ -753,7 +765,7 @@ ${contactForm('Want help sorting through the options?', 'Sometimes the hardest p
 pages.push({
   file: 'contact.html',
   title: 'Contact | Cool Bird Counseling, Colorado',
-  description: 'Request a confidential consultation with Kelly Faus, MA, LPC, LAC. Telehealth counseling across Colorado. Same-week openings available.',
+  description: 'Request a confidential consultation with Kelly Faus, MA, LPC, LAC. In-person counseling in Colorado Springs or telehealth counseling across Colorado. Same-week openings available.',
   body: `
   <section class="page-head wrap">
     <p class="eyebrow">Contact</p>
@@ -776,7 +788,13 @@ pages.push({
           </p>
           <p>
             <strong>Sessions</strong><br>
-            Virtual, statewide in Colorado, via Zoom for Healthcare
+            In-person in Colorado Springs or virtual, statewide in Colorado via Zoom for Healthcare
+          </p>
+                    <p>
+            <strong>Office Location</strong><br>
+            815 S 25th St, Suite E<br>
+            Colorado Springs, CO 80904<br>
+            By appointment only
           </p>
           <p>
             <strong>Response time</strong><br>
@@ -1046,11 +1064,14 @@ pages.push({
   file: 'service-individual-psychotherapy.html',
   banner: 'pines', bannerAlt: 'A quiet stand of Colorado pines',
   title: 'Individual Psychotherapy in Colorado | Cool Bird',
-  description: 'Individual therapy for substance use, grief, depression, anxiety, trauma, anger, and codependency. $100 per 45-60 minute telehealth session, statewide in Colorado.',
+  description: 'Individual therapy for substance use, grief, depression, anxiety, trauma, anger, and codependency. $100 per 45-60 minute session, in-person in Colorado Springs or telehealth statewide in Colorado.',
   schema: [{
     '@type': 'Service', name: 'Individual Psychotherapy',
     provider: { '@id': SITE + '/#practice' },
-    areaServed: { '@type': 'State', name: 'Colorado' },
+    areaServed: [
+  { '@type': 'City', name: 'Colorado Springs' },
+  { '@type': 'State', name: 'Colorado' }
+],
     serviceType: 'Individual Psychotherapy',
     url: SITE + '/service-individual-psychotherapy'
   }],
@@ -1058,7 +1079,7 @@ pages.push({
   <section class="page-head wrap">
     <p class="eyebrow"><a href="services.html" style="color:inherit;text-decoration:none">Services</a></p>
     <h1>Individual Psychotherapy</h1>
-    <p class="lede">Ongoing one-to-one counseling for adults and adolescents across Colorado, by secure video.</p>
+    <p class="lede">Ongoing one-to-one counseling for adults and adolescents in Colorado Springs or across Colorado via secure video.</p>
   </section>
 
   <section class="section" style="padding-top:0">
@@ -1085,12 +1106,12 @@ pages.push({
       <ul class="ticks">
         <li>A free consultation call before you commit to anything</li>
         <li>Weekly sessions to start for most people, tapering as things steady out</li>
-        <li>Secure video through Zoom for Healthcare &mdash; no commute, no waiting room</li>
+        <li>In-person in Colorado Springs or secure video through Zoom for Healthcare</li>
         <li>Direct feedback, and goals you set rather than goals I assign</li>
       </ul>
 
       <p class="callout" style="margin-top:2.5rem">
-        All sessions are conducted virtually via Zoom for Healthcare, anywhere in Colorado.
+        Sessions are conducted in-person in Colorado Springs or virtually via Zoom for Healthcare, anywhere in Colorado.
         <a href="services.html">See all services and payment options &rarr;</a>
       </p>
     </div>
@@ -1108,7 +1129,10 @@ pages.push({
   schema: [{
     '@type': 'Service', name: 'Substance Use and Mental Health Assessment',
     provider: { '@id': SITE + '/#practice' },
-    areaServed: { '@type': 'State', name: 'Colorado' },
+    areaServed: [
+  { '@type': 'City', name: 'Colorado Springs' },
+  { '@type': 'State', name: 'Colorado' }
+],
     serviceType: 'Substance Use and Mental Health Assessment',
     url: SITE + '/service-assessment'
   }],
@@ -1140,14 +1164,14 @@ pages.push({
 
       <h2 style="margin-top:2.5rem">What to expect</h2>
       <ul class="ticks">
-        <li>One 60&ndash;90 minute telehealth session</li>
+        <li>One 60&ndash;90 minute session</li>
         <li>Written findings and level-of-care recommendations</li>
         <li>Turnaround discussed up front so you can meet any deadline</li>
         <li>A copy released only where you authorize it in writing</li>
       </ul>
 
       <p class="callout" style="margin-top:2.5rem">
-        All sessions are conducted virtually via Zoom for Healthcare, anywhere in Colorado.
+        Sessions are conducted in-person in Colorado Springs or virtually via Zoom for Healthcare, anywhere in Colorado.
         <a href="services.html">See all services and payment options &rarr;</a>
       </p>
     </div>
@@ -1165,7 +1189,10 @@ pages.push({
   schema: [{
     '@type': 'Service', name: 'Clinical Supervision',
     provider: { '@id': SITE + '/#practice' },
-    areaServed: { '@type': 'State', name: 'Colorado' },
+    areaServed: [
+  { '@type': 'City', name: 'Colorado Springs' },
+  { '@type': 'State', name: 'Colorado' }
+],
     serviceType: 'Clinical Supervision',
     url: SITE + '/service-clinical-supervision'
   }],
@@ -1185,7 +1212,7 @@ pages.push({
       </div>
       <p>Supervision should do more than sign off on hours. Good supervision gives you somewhere to bring the case that is keeping you up, the client you are quietly dreading, and the question you are embarrassed to ask.</p>
       <p>I supervise graduate interns, pre-licensed professionals working toward LPC or LAC, and peer recovery coaches. If you are pursuing addiction counselor certification in Colorado, ask about CAC Core Curriculum credit &mdash; required coursework hours can often be covered as part of supervision.</p>
-      <p>As Clinical Director at Denver Recovery Solutions and a supervisor with Lost and Found Behavioral Wellness, I spend a lot of my week on the development side of this field. It is genuinely the part of the work I enjoy most.</p>
+      <p>With experience in supervisory and clinical director positions, I spent a lot of time on the development side of this field.</p>
 
       <h2 style="margin-top:2.5rem">Who this is for</h2>
       <ul class="ticks">
@@ -1204,7 +1231,7 @@ pages.push({
       </ul>
 
       <p class="callout" style="margin-top:2.5rem">
-        All sessions are conducted virtually via Zoom for Healthcare, anywhere in Colorado.
+        Sessions are conducted in-person in Colorado Springs or virtually via Zoom for Healthcare, anywhere in Colorado.
         <a href="services.html">See all services and payment options &rarr;</a>
       </p>
     </div>
@@ -1220,7 +1247,7 @@ pages.push({
   file: 'faq.html',
   title: 'Counseling FAQ | Cool Bird Counseling, Colorado',
   description: 'Costs, insurance, telehealth, first sessions, assessments, supervision, and crisis resources — straight answers about counseling with Kelly Faus, MA, LPC, LAC.',
-  schema: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you take insurance?", "acceptedAnswer": {"@type": "Answer", "text": "Network participation changes from time to time, so the honest answer is: ask me. Many people choose private pay because it allows for flexibility and confidentiality, free from restrictions, diagnoses, or other information on record with an insurance company."}}, {"@type": "Question", "name": "How much does a session cost?", "acceptedAnswer": {"@type": "Answer", "text": "Individual psychotherapy is $100 for a 45&ndash;60 minute session. A substance use and mental health assessment is $150 for a 60&ndash;90 minute session. Clinical supervision is quoted on request."}}, {"@type": "Question", "name": "Are sessions in person or online?", "acceptedAnswer": {"@type": "Answer", "text": "All sessions are conducted virtually via Zoom for Healthcare. That means no commute and no waiting room, and it means I can see clients anywhere in Colorado \u2014 from Denver to the Western Slope."}}, {"@type": "Question", "name": "Do I have to want to quit drinking or using to work with you?", "acceptedAnswer": {"@type": "Answer", "text": "No. Abstinence is one good goal among several. If harm reduction is where you are, that is where we start. I am not going to hand you a verdict on your use before we have even talked about it."}}, {"@type": "Question", "name": "What happens in a first session?", "acceptedAnswer": {"@type": "Answer", "text": "Mostly history and orientation \u2014 what brought you here, what you have already tried, what you want to be different, and how we will know it is working. You do not need to prepare anything or explain everything up front."}}, {"@type": "Question", "name": "How long will I be in therapy?", "acceptedAnswer": {"@type": "Answer", "text": "Most people start weekly and taper as things steady out. Some people come for a few months around a specific crisis; others stay longer. You set the goals, and we revisit whether it is still working."}}, {"@type": "Question", "name": "Do you work with teenagers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. I work with both adolescents and adults on substance use, grief, and mental health concerns."}}, {"@type": "Question", "name": "Can you provide a court-ordered assessment?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Substance use and mental health assessments are frequently requested by courts, probation, employers, and licensing boards. You receive written findings with level-of-care recommendations, released only where you authorize it in writing."}}, {"@type": "Question", "name": "Do you offer supervision for CAC certification?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. I supervise graduate interns, pre-licensed professionals, and peer recovery coaches, and CAC Core Curriculum credit is available where applicable."}}, {"@type": "Question", "name": "What if I am in crisis right now?", "acceptedAnswer": {"@type": "Answer", "text": "Call or text 988 to reach the Suicide & Crisis Lifeline, answered in Colorado 24 hours a day. If you are in immediate danger, call 911. This website is not a crisis service and messages here are not monitored around the clock."}}, {"@type": "Question", "name": "What is a Good Faith Estimate?", "acceptedAnswer": {"@type": "Answer", "text": "Under the No Surprises Act, clients who are uninsured or not using insurance have the right to a written estimate of expected costs before care begins. One is provided to qualifying clients and to anyone else on request."}}, {"@type": "Question", "name": "How do I get started?", "acceptedAnswer": {"@type": "Answer", "text": "Send a note through the contact page, email kelly@coolbirdcounseling.com, or call (303) 351-1068. I reply within one business day, and the consultation is free with no obligation to book."}}]}],
+  schema: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you take insurance?", "acceptedAnswer": {"@type": "Answer", "text": "Network participation changes from time to time, so the honest answer is: ask me. Many people choose private pay because it allows for flexibility and confidentiality, free from restrictions, diagnoses, or other information on record with an insurance company."}}, {"@type": "Question", "name": "How much does a session cost?", "acceptedAnswer": {"@type": "Answer", "text": "Individual psychotherapy is $100 for a 45&ndash;60 minute session. A substance use and mental health assessment is $150 for a 60&ndash;90 minute session. Clinical supervision is quoted on request."}}, {"@type": "Question", "name": "Are sessions in person or online?", "acceptedAnswer": {"@type": "Answer", "text": "Sessions are conducted in-person in Colorado Springs or virtually via Zoom for Healthcare. That means no commute and no waiting room, and it means I can see clients anywhere in Colorado \u2014 from Denver to the Western Slope."}}, {"@type": "Question", "name": "Do I have to want to quit drinking or using to work with you?", "acceptedAnswer": {"@type": "Answer", "text": "No. Abstinence is one good goal among several. If harm reduction is where you are, that is where we start. I am not going to hand you a verdict on your use before we have even talked about it."}}, {"@type": "Question", "name": "What happens in a first session?", "acceptedAnswer": {"@type": "Answer", "text": "Mostly history and orientation \u2014 what brought you here, what you have already tried, what you want to be different, and how we will know it is working. You do not need to prepare anything or explain everything up front."}}, {"@type": "Question", "name": "How long will I be in therapy?", "acceptedAnswer": {"@type": "Answer", "text": "Most people start weekly and taper as things steady out. Some people come for a few months around a specific crisis; others stay longer. You set the goals, and we revisit whether it is still working."}}, {"@type": "Question", "name": "Do you work with teenagers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. I work with both adolescents and adults on substance use, grief, and mental health concerns."}}, {"@type": "Question", "name": "Can you provide a court-ordered assessment?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Substance use and mental health assessments are frequently requested by courts, probation, employers, and licensing boards. You receive written findings with level-of-care recommendations, released only where you authorize it in writing."}}, {"@type": "Question", "name": "Do you offer supervision for CAC certification?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. I supervise graduate interns, pre-licensed professionals, and peer recovery coaches, and CAC Core Curriculum credit is available where applicable."}}, {"@type": "Question", "name": "What if I am in crisis right now?", "acceptedAnswer": {"@type": "Answer", "text": "Call or text 988 to reach the Suicide & Crisis Lifeline, answered in Colorado 24 hours a day. If you are in immediate danger, call 911. This website is not a crisis service and messages here are not monitored around the clock."}}, {"@type": "Question", "name": "What is a Good Faith Estimate?", "acceptedAnswer": {"@type": "Answer", "text": "Under the No Surprises Act, clients who are uninsured or not using insurance have the right to a written estimate of expected costs before care begins. One is provided to qualifying clients and to anyone else on request."}}, {"@type": "Question", "name": "How do I get started?", "acceptedAnswer": {"@type": "Answer", "text": "Send a note through the contact page, email kelly@coolbirdcounseling.com, or call (303) 351-1068. I reply within one business day, and the consultation is free with no obligation to book."}}]}],
   body: `
   <section class="page-head wrap">
     <p class="eyebrow">FAQ</p>
@@ -1241,7 +1268,7 @@ pages.push({
         </div>
         <div class="doc-row" style="display:block">
           <h3 style="font-size:1.125rem;margin-bottom:.35em">Are sessions in person or online?</h3>
-          <p style="font-size:.9375rem;margin:0">All sessions are conducted virtually via Zoom for Healthcare. That means no commute and no waiting room, and it means I can see clients anywhere in Colorado &mdash; from Denver to the Western Slope.</p>
+          <p style="font-size:.9375rem;margin:0">Sessions are conducted in-person in Colorado Springs or virtually via Zoom for Healthcare. Telehealth means no commute and no waiting room, and it means I can see clients anywhere in Colorado &mdash; from Denver to the Western Slope.</p>
         </div>
         <div class="doc-row" style="display:block">
           <h3 style="font-size:1.125rem;margin-bottom:.35em">Do I have to want to quit drinking or using to work with you?</h3>
@@ -1415,7 +1442,7 @@ POSTS.forEach(post => {
     <div class="wrap narrow">
       ${mdToHtml(post.md)}
       <p class="callout" style="margin-top:3rem">
-        Kelly Faus, MA, LPC, LAC is an addiction and mental health counselor serving clients
+        Kelly Faus, MA, LPC, LAC is an addiction and mental health counselor serving clients in-person in Colorado Springs or
         throughout Colorado by telehealth. <a href="contact.html">Book a free consultation &rarr;</a>
       </p>
     </div>
@@ -1429,7 +1456,7 @@ ${contactForm('Start your journey today', 'A short conversation costs nothing an
 pages.push({
   file: 'blog.html',
   title: 'Blog | Cool Bird Counseling, Colorado',
-  description: 'Plain-language writing on addiction, recovery, grief, and mental health from Kelly Faus, MA, LPC, LAC, a counselor serving clients throughout Colorado.',
+  description: 'Plain-language writing on addiction, recovery, grief, and mental health from Kelly Faus, MA, LPC, LAC, a counselor serving clients in Colorado Springs and throughout Colorado.',
   schema: [{ '@type': 'Blog', name: 'Cool Bird Counseling Blog', url: SITE + '/blog',
              author: { '@id': SITE + '/#kelly' } }],
   body: `
@@ -1579,7 +1606,7 @@ pages.push({
 
       <h2>Telehealth</h2>
       <p>
-        Sessions are conducted over Zoom for Healthcare. You are responsible for a private location
+        Sessions are conducted in-person in Colorado Springs or over Zoom for Healthcare. For virtual sessions, you are responsible for a private location
         and a working connection. Telehealth carries limitations, including the possibility of
         technical interruption; these are covered in the telehealth consent you sign before starting.
       </p>
@@ -1669,13 +1696,13 @@ Sitemap: ${SITE}/sitemap.xml
 fs.writeFileSync(path.join(OUT, 'llms.txt'),
 `# Cool Bird Counseling LLC
 
-> Addiction, grief, and mental health counseling for adolescents and adults throughout
-> Colorado, delivered by telehealth. Solo practice of Kelly R. Faus, MA, LPC, LAC.
+> Addiction, grief, and mental health counseling for adolescents and adults in-person in Colorado Springs or throughout
+> Colorado by telehealth. Solo practice of Kelly R. Faus, MA, LPC, LAC.
 
 ## Practitioner
 Kelly R. Faus, MA, LPC, LAC — Licensed Professional Counselor and Licensed Addiction
 Counselor in Colorado. Trained at Adams State University and the University of Northern
-Colorado. Gottman Method training, Levels 1 & 2. Also serves as Clinical Director at Denver
+Colorado. Gottman Method training, Levels 1 & 2. Previously served as Clinical Director at Denver
 Recovery Solutions and as a supervisor with Lost and Found Behavioral Wellness.
 
 ## Services and rates
@@ -1684,7 +1711,7 @@ Recovery Solutions and as a supervisor with Lost and Found Behavioral Wellness.
 - Clinical Supervision (CAC Core Curriculum credit available), rate on request: ${SITE}/service-clinical-supervision
 
 ## Key facts
-- All sessions are virtual, via Zoom for Healthcare, anywhere in Colorado
+- Sessions are in-person in Colorado Springs or virtual via Zoom for Healthcare anywhere in Colorado
 - Private pay available; ask about current network participation
 - Works with substance use, grief, depression, anxiety, trauma, anger, and codependency
 - Adolescents and adults
@@ -1783,7 +1810,7 @@ fs.readdirSync(OUT)
 fs.writeFileSync(path.join(OUT, 'site.webmanifest'), JSON.stringify({
   name: 'Cool Bird Counseling',
   short_name: 'Cool Bird',
-  description: 'Addiction, grief, and mental health counseling by telehealth throughout Colorado.',
+  description: 'Addiction, grief, and mental health counseling in Colorado Springs or by telehealth throughout Colorado.',
   start_url: '/',
   scope: '/',
   display: 'browser',
